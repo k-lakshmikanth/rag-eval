@@ -1,0 +1,35 @@
+qdrant:
+  url_env: QDRANT_URL
+  api_key_env: ""
+  default_url: http://localhost:6333
+
+dense:
+  - jina-embeddings-v5-omni-small
+  - nomic-ai/nomic-embed-text-v2-moe
+  - jina-embeddings-v4
+
+sparse:
+  - Qdrant/bm25
+  - prithivida/Splade_PP_en_v1
+  - Qdrant/minicoil-v1
+
+late:
+  - colbert-ir/colbertv2.0
+  - answerdotai/answerai-colbert-small-v1
+
+rrf:
+  k: 60
+  top_k: 8
+
+eval:
+  Judge_model: "OpenAI/gpt-4"
+  Judge_model_API_key: "<API_KEY>"
+
+paths:
+  chunks: ./data/chunks.parquet
+  questions: ./data/questions.parquet
+  responses_parquet: ./benchmark_outputs/responses.parquet
+  responses_jsonl: ./benchmark_outputs/responses.jsonl
+  eval_details_parquet: ./benchmark_outputs/eval_details.parquet
+  eval_details_jsonl: ./benchmark_outputs/eval_details.jsonl
+  eval_report_html: ./benchmark_outputs/eval_report.html

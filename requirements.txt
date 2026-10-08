@@ -1,0 +1,15 @@
+qdrant-client
+pyyaml
+pyngrok
+requests
+pandas
+pyarrow
+litellm
+deepeval
+plotly
+fastembed
+torch
+torchvision
+sentence-transformers
+transformers
+accelerate
